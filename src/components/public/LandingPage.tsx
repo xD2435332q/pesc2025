@@ -5,6 +5,7 @@ import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
 export default function LandingPage() {
+  console.log("asdasd");
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

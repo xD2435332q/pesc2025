@@ -73,7 +73,6 @@ const Products = () => {
     }
   };
 
-export default function Products() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -87,3 +86,4 @@ export default function Products() {
     </div>
   );
 }
+export default Products;

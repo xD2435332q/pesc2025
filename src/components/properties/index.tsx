@@ -6,6 +6,7 @@ import { columns } from "./columns";
 import { useEffect, useState } from "react";
 import { getHouses, createHouse, updateHouse, deleteHouse, type House } from "@/lib/api/houses";
 import { useToast } from "@/components/ui/use-toast";
+import { PropertyForm } from "./property-form";
 
 const Properties = () => {
   const [properties, setProperties] = useState<House[]>([]);
@@ -31,33 +32,33 @@ const Properties = () => {
     }
   };
 
-  const handleAdd = async (data: any) => {
-    try {
-      await createHouse(data);
-      toast({ title: "Success", description: "Property created successfully" });
-      loadProperties();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to create property",
-        variant: "destructive",
-      });
-    }
-  };
+  // const handleAdd = async (data: any) => {
+  //   try {
+  //     await createHouse(data);
+  //     toast({ title: "Success", description: "Property created successfully" });
+  //     loadProperties();
+  //   } catch (error) {
+  //     toast({
+  //       title: "Error",
+  //       description: "Failed to create property",
+  //       variant: "destructive",
+  //     });
+  //   }
+  // };
 
-  const handleEdit = async (id: number, data: any) => {
-    try {
-      await updateHouse(id, data);
-      toast({ title: "Success", description: "Property updated successfully" });
-      loadProperties();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to update property",
-        variant: "destructive",
-      });
-    }
-  };
+  // const handleEdit = async (id: number, data: any) => {
+  //   try {
+  //     await updateHouse(id, data);
+  //     toast({ title: "Success", description: "Property updated successfully" });
+  //     loadProperties();
+  //   } catch (error) {
+  //     toast({
+  //       title: "Error",
+  //       description: "Failed to update property",
+  //       variant: "destructive",
+  //     });
+  //   }
+  // };
 
   const handleDelete = async (id: number) => {
     try {
@@ -73,11 +74,9 @@ const Properties = () => {
     }
   };
 
-import { PropertyForm } from "./property-form";
-import { useState } from "react";
+  // import { PropertyForm } from "./property-form";
 
-export default function Properties() {
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState<any>(null);
 
@@ -118,3 +117,4 @@ export default function Properties() {
     </div>
   );
 }
+export default Properties;
